@@ -1,6 +1,4 @@
-FROM jupyterhub/jupyterhub:0.9.4
-
-LABEL maintainer="Marvin Kastner <marvin.kastner@tuhh.de>"
+FROM jupyterhub/jupyterhub:1.3.dev
 
 RUN apt-get upgrade -y
 

@@ -1,6 +1,4 @@
-FROM jupyter/scipy-notebook:c7d997f2db86
-
-LABEL maintainer="Marvin Kastner <marvin.kastner@tuhh.de>"
+FROM jupyter/scipy-notebook:5cfa60996e84
 
 USER root
 
@@ -14,7 +12,12 @@ RUN python3 -m pip install --no-cache jupyterhub==0.9.4
 
 # Add exam
 USER root
+
 RUN chown -R jovyan:users /home/jovyan/
+
+RUN echo ' jovyan ALL=(ALL)   ALL' >> /etc/sudoers
+
+RUN echo "jovyan:ibhubs" | chpasswd
 
 # This is only necessary if you run your linux in a virtual machine, e.g. the
 # default machine you get at TUHH. Otherwise remove the environment variable!
@@ -23,3 +26,5 @@ RUN chown -R jovyan:users /home/jovyan/
 ENV OPENBLAS_CORETYPE nehalem
 
 USER $NB_UID
+
+
