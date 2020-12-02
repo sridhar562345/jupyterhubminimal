@@ -10,7 +10,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      DOCKER_NOTEBOOK_IMAGE: "exam-scipy-notebook"
+      DOCKER_NOTEBOOK_IMAGE: "base-notebook"
       DOCKER_NETWORK_NAME: "jupyterhub-network"
 
 networks:
