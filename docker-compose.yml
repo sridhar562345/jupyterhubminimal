@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  jupyterhub:
+    restart: always
+    build: ./jupyterhub
+    hostname: jupyterhub
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      DOCKER_NOTEBOOK_IMAGE: "exam-scipy-notebook"
+      DOCKER_NETWORK_NAME: "jupyterhub-network"
+
+networks:
+  default:
+    external:
+      name: "jupyterhub-network"
