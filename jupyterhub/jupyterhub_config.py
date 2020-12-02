@@ -21,6 +21,7 @@ c.JupyterHub.authenticator_class = tmpauthenticator.TmpAuthenticator
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 c.DockerSpawner.image = os.environ['DOCKER_NOTEBOOK_IMAGE']
 c.DockerSpawner.debug = True
+c.Spawner.default_url = '/lab'
 
 
 # Networking

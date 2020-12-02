@@ -1,4 +1,6 @@
-FROM jupyter/scipy-notebook:5cfa60996e84
+# FROM jupyter/scipy-notebook:5cfa60996e84
+
+FROM jupyter/base-notebook:python-3.8.6
 
 USER root
 

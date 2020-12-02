@@ -5,7 +5,7 @@ docker network create jupyterhub-network
 set -e
 
 # this is the docker container spawned for each user
-docker build --no-cache -t exam-scipy-notebook ./jupyternotebook/
+docker build --no-cache -t base-notebook ./jupyternotebook/
 
 # set up jupyterhub server
 docker-compose build --no-cache
